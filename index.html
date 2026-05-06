@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pixels Fotografía y Video | Marcos Reyes · Fotógrafo de Bodas</title>
+  <meta name="description" content="Marcos Reyes — Fotógrafo profesional de bodas. La fiesta dura una noche, el recuerdo es para siempre.">
+  <meta property="og:title" content="Pixels Fotografía y Video | Marcos Reyes">
+  <meta property="og:description" content="Fotógrafo profesional de bodas. La fiesta dura una noche, el recuerdo es para siempre.">
+  <meta property="og:image" content="https://res.cloudinary.com/dgo3agrzb/image/upload/v1777600482/story_1771294514407_unwirv.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="https://res.cloudinary.com/dgo3agrzb/image/upload/v1777600480/camara_z0x9ag.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --cream:#e3dbce;--dark:#1a150f;--tan:#a99076;
+      --brown:#4f3d2d;--copper:#935a37;--white:#faf8f4;
+      --fd:'Cormorant Garamond',serif;--fb:'Jost',sans-serif;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:var(--fb);background:var(--white);color:var(--dark);font-weight:300;overflow-x:hidden}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 5%;background:rgba(26,21,15,.93);backdrop-filter:blur(10px);border-bottom:1px solid rgba(163,144,118,.22);transition:background .3s}
+    .nav-logo{display:flex;align-items:center;text-decoration:none}
+    .nav-logo img{height:46px;object-fit:contain}
+    .nav-links{display:flex;gap:36px;list-style:none;align-items:center}
+    .nav-links a{color:var(--cream);text-decoration:none;font-size:.76rem;letter-spacing:2.5px;text-transform:uppercase;opacity:.8;transition:opacity .2s,color .2s}
+    .nav-links a:hover{opacity:1;color:var(--tan)}
+    .dropdown{position:relative}
+    .dropdown-menu{display:none;position:absolute;top:145%;left:50%;transform:translateX(-50%);background:var(--brown);min-width:230px;border:1px solid rgba(163,144,118,.3);list-style:none;padding:8px 0}
+    .dropdown:hover .dropdown-menu{display:block}
+    .dropdown-menu li a{display:block;padding:11px 20px;font-size:.74rem;letter-spacing:1.5px;color:var(--cream);opacity:.85}
+    .dropdown-menu li a:hover{opacity:1;color:var(--tan);background:rgba(163,144,118,.08)}
+    .nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer}
+    .nav-toggle span{width:26px;height:2px;background:var(--cream)}
+
+    /* HERO */
+    #hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;background:url('https://res.cloudinary.com/dgo3agrzb/image/upload/v1777600496/Pixels_Fotograf%C3%ADa_y_Video-180_vfamqy.jpg') center/cover no-repeat;filter:brightness(.4);transform:scale(1.04);transition:transform 9s ease}
+    #hero:hover .hero-bg{transform:scale(1)}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(26,21,15,.06) 0%,rgba(26,21,15,.62) 100%)}
+    .hero-content{position:relative;z-index:2;padding:0 20px}
+    .hero-content h1{font-family:var(--fd);font-size:clamp(3rem,8vw,7rem);color:var(--cream);font-weight:300;line-height:1.08;letter-spacing:2px;animation:fadeUp .9s ease both}
+    .hero-content h1 strong{color:var(--tan);font-weight:600;font-style:italic}
+    .hero-content p{margin-top:18px;font-size:clamp(.9rem,2vw,1.1rem);color:var(--cream);letter-spacing:3.5px;text-transform:uppercase;font-style:italic;opacity:0;animation:fadeUp .9s .2s ease forwards}
+    .hero-cta{margin-top:38px;display:inline-block;padding:14px 44px;border:1px solid var(--tan);color:var(--tan);text-decoration:none;font-size:.75rem;letter-spacing:3px;text-transform:uppercase;transition:background .3s,color .3s;opacity:0;animation:fadeUp .9s .4s ease forwards}
+    .hero-cta:hover{background:var(--tan);color:var(--dark)}
+
+    /* ABOUT */
+    #about{display:grid;grid-template-columns:1fr 1fr;max-width:1200px;margin:0 auto;padding:110px 5%;gap:80px;align-items:center}
+    .about-text h2{font-family:var(--fd);font-size:clamp(2rem,4vw,3.2rem);font-weight:400;line-height:1.15;margin-bottom:28px;color:var(--brown)}
+    .about-text p{line-height:1.9;color:#4a3c30;margin-bottom:16px;font-size:.95rem}
+    .about-text p strong{color:var(--dark);font-weight:500}
+    .about-text p em{font-style:italic;color:var(--copper)}
+    .about-photo img{width:100%;aspect-ratio:2/3;object-fit:cover;box-shadow:22px 22px 0 var(--cream)}
+
+    /* BANNER */
+    .banner{min-height:500px;position:relative;display:flex;align-items:center;justify-content:center;text-align:center}
+    .banner-bg{position:absolute;inset:0;background:url('https://res.cloudinary.com/dgo3agrzb/image/upload/v1777600544/Boda_7_psxy3i.jpg') center/cover no-repeat;filter:brightness(.27)}
+    .banner-content{position:relative;z-index:2;padding:60px 20px}
+    .banner-content h2{font-family:var(--fd);font-size:clamp(2rem,5vw,4.2rem);color:var(--cream);font-weight:300;margin-bottom:14px;line-height:1.2}
+    .banner-content h2 strong{color:var(--tan);font-style:italic}
+    .banner-content p{color:var(--cream);opacity:.72;letter-spacing:2px;margin-bottom:34px;font-size:.87rem}
+    .btn-copper{display:inline-block;padding:14px 44px;background:var(--copper);color:var(--cream);text-decoration:none;font-size:.76rem;letter-spacing:3px;text-transform:uppercase;font-weight:500;transition:background .3s}
+    .btn-copper:hover{background:var(--tan)}
+
+    /* PLANNING */
+    #planning{max-width:820px;margin:0 auto;padding:110px 5%;text-align:center}
+    #planning h2{font-family:var(--fd);font-size:clamp(1.6rem,3.5vw,2.8rem);font-weight:400;line-height:1.3;margin-bottom:28px;color:var(--brown)}
+    #planning p{color:#5a4535;line-height:1.9;font-size:.95rem}
+    #planning p strong{color:var(--dark)}
+
+    /* VSL */
+    #vsl{background:var(--dark);padding:80px 5%;text-align:center}
+    #vsl h2{font-family:var(--fd);color:var(--cream);font-size:clamp(1.5rem,3vw,2.4rem);font-weight:300;margin-bottom:40px}
+    .vsl-wrapper{max-width:900px;margin:0 auto}
+    .vsl-wrapper video{width:100%;border:1px solid rgba(163,144,118,.3);display:block}
+
+    /* CONTACT */
+    #contact{position:relative;padding:110px 5%;display:flex;align-items:center;justify-content:center}
+    .contact-bg{position:absolute;inset:0;background:url('https://res.cloudinary.com/dgo3agrzb/image/upload/v1777600540/Boda_8_scgmfb.jpg') center/cover no-repeat;filter:brightness(.22)}
+    .contact-box{position:relative;z-index:2;background:rgba(26,21,15,.83);border:1px solid rgba(163,144,118,.3);max-width:560px;width:100%;padding:56px 48px}
+    .contact-box h3{font-family:var(--fd);font-size:clamp(1.5rem,3vw,2.1rem);color:var(--cream);margin-bottom:10px;font-weight:400}
+    .contact-box>p{color:rgba(227,219,206,.7);font-size:.85rem;margin-bottom:34px;line-height:1.7}
+    .contact-box>p a{color:var(--tan);text-decoration:none}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+    .form-group label{font-size:.7rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--tan)}
+    .form-group input,.form-group textarea{background:rgba(227,219,206,.06);border:1px solid rgba(163,144,118,.25);color:var(--cream);padding:12px 14px;font-family:var(--fb);font-size:.9rem;outline:none;transition:border .2s}
+    .form-group input:focus,.form-group textarea:focus{border-color:var(--tan)}
+    .form-group textarea{resize:vertical;min-height:120px}
+    .btn-submit{width:100%;padding:15px;background:var(--copper);color:var(--cream);border:none;cursor:pointer;font-family:var(--fb);font-size:.78rem;letter-spacing:3px;text-transform:uppercase;font-weight:500;transition:background .3s}
+    .btn-submit:hover{background:var(--tan)}
+
+    /* PACKAGES */
+    #packages{padding:110px 5%;background:var(--dark)}
+    #packages .section-head{text-align:center;margin-bottom:64px}
+    #packages .section-head h2{font-family:var(--fd);font-size:clamp(1.8rem,4vw,3.2rem);color:var(--cream);font-weight:300}
+    #packages .section-head p{color:var(--tan);letter-spacing:2px;font-size:.78rem;text-transform:uppercase;margin-top:10px}
+    .packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;max-width:1200px;margin:0 auto}
+    .package-card{position:relative;overflow:hidden}
+    .package-card img{width:100%;aspect-ratio:2/3;object-fit:cover;display:block;filter:brightness(.5);transition:filter .4s,transform .5s}
+    .package-card:hover img{filter:brightness(.3);transform:scale(1.04)}
+    .package-info{position:absolute;bottom:0;left:0;right:0;padding:36px 28px;background:linear-gradient(transparent,rgba(26,21,15,.9))}
+    .package-info h3{font-family:var(--fd);color:var(--cream);font-size:1.5rem;margin-bottom:10px;font-weight:400}
+    .package-info p{color:rgba(227,219,206,.72);font-size:.82rem;line-height:1.6;margin-bottom:22px}
+    .package-info a{display:inline-block;padding:9px 22px;border:1px solid var(--tan);color:var(--tan);font-size:.72rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:background .25s,color .25s}
+    .package-info a:hover{background:var(--tan);color:var(--dark)}
+
+    /* GALLERY */
+    #gallery{padding:110px 5%;background:var(--white)}
+    #gallery h2{font-family:var(--fd);font-size:clamp(1.8rem,4vw,3.2rem);text-align:center;margin-bottom:60px;font-weight:400;color:var(--brown)}
+    .gallery-grid{columns:3;column-gap:8px;max-width:1200px;margin:0 auto}
+    .gallery-item{break-inside:avoid;margin-bottom:8px;overflow:hidden;cursor:pointer}
+    .gallery-item img{width:100%;display:block;transition:transform .45s,filter .45s}
+    .gallery-item:hover img{transform:scale(1.04);filter:brightness(.8)}
+
+    /* Lightbox */
+    #lightbox{display:none;position:fixed;inset:0;z-index:200;background:rgba(26,21,15,.96);align-items:center;justify-content:center}
+    #lightbox.open{display:flex}
+    #lightbox img{max-width:92vw;max-height:92vh;object-fit:contain}
+    #lb-close{position:absolute;top:24px;right:30px;font-size:2rem;color:var(--cream);cursor:pointer;opacity:.7;transition:opacity .2s;line-height:1}
+    #lb-close:hover{opacity:1}
+
+    /* INSTAGRAM */
+    #instagram{padding:80px 5%;text-align:center;background:var(--brown)}
+    #instagram h2{font-family:var(--fd);color:var(--cream);font-size:clamp(1.5rem,3vw,2.5rem);font-weight:300;margin-bottom:16px}
+    #instagram a{color:var(--tan);font-size:1rem;text-decoration:none;letter-spacing:2px;border-bottom:1px solid rgba(163,144,118,.4);padding-bottom:2px;transition:color .2s}
+    #instagram a:hover{color:var(--cream)}
+
+    /* FOOTER */
+    footer{background:var(--dark);border-top:1px solid rgba(163,144,118,.2);padding:64px 5%;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;align-items:start}
+    .footer-logo img{height:50px;object-fit:contain;margin-bottom:16px;display:block}
+    .footer-logo p{color:rgba(227,219,206,.5);font-size:.85rem;line-height:1.75}
+    .footer-col h4{font-size:.68rem;letter-spacing:3px;text-transform:uppercase;color:var(--tan);margin-bottom:14px}
+    .footer-col p,.footer-col a{color:rgba(227,219,206,.6);font-size:.87rem;line-height:1.75;text-decoration:none;display:block}
+    .footer-col a:hover{color:var(--tan)}
+    .footer-bottom{background:var(--dark);text-align:center;padding:22px 5%;color:rgba(227,219,206,.22);font-size:.75rem;letter-spacing:1.5px;border-top:1px solid rgba(255,255,255,.05)}
+
+    /* ANIMATIONS */
+    @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+    .reveal{opacity:0;transform:translateY(32px);transition:opacity .7s,transform .7s}
+    .reveal.visible{opacity:1;transform:none}
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      #about{grid-template-columns:1fr;gap:40px}
+      .about-photo{order:-1}
+      .about-photo img{aspect-ratio:4/3;box-shadow:10px 10px 0 var(--cream)}
+      .packages-grid{grid-template-columns:1fr}
+      .gallery-grid{columns:2}
+      footer{grid-template-columns:1fr 1fr}
+      .form-row{grid-template-columns:1fr}
+    }
+    @media(max-width:600px){
+      .nav-links{display:none;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:var(--dark);padding:24px;gap:20px}
+      .nav-links.open{display:flex}
+      .nav-toggle{display:flex}
+      .gallery-grid{columns:1}
+      footer{grid-template-columns:1fr}
+      .contact-box{padding:36px 22px}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="mainNav">
+    <a href="#" class="nav-logo">
+      <img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1777600480/letras_vljkqr.png" alt="Pixels Fotografía y Video">
+    </a>
+    <div class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">Inicio</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Tus <strong>Fotos</strong> son para<br>toda la <strong>Vida.</strong></h1>
+      <p>¿Qué valor le das a tus recuerdos?</p>
+      <a href="#contact" class="hero-cta">Contactarme</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-text reveal">
+      <h2>Hola!</h2>
+      <p>Soy <strong>Marcos Reyes</strong>, fotógrafo y videógrafo profesional de <strong>Pixels Fotografía y Video</strong>, especializado en bodas.</p>
+      <p>Mi trabajo es <strong>lo más importante</strong> de tu evento. Entiendo que la decoración y la fiesta son para <em>esa noche</em>. Mis fotos y videos son para <em>toda la vida</em>.</p>
+      <p>Mi <strong>compromiso</strong> es ser el guía que te ayude a crear un recuerdo que puedas atesorar y revivir con la misma emoción de aquí a 20 años.</p>
+    </div>
+    <div class="about-photo reveal">
+      <img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1777600492/DSC_1094_1_fq0ezz.jpg" alt="Marcos Reyes Fotógrafo">
+    </div>
+  </section>
+
+  <!-- BANNER -->
+  <div class="banner">
+    <div class="banner-bg"></div>
+    <div class="banner-content reveal">
+      <h2><strong>Un cliente satisfecho</strong><br>es la mejor publicidad.</h2>
+      <p>Todos los clientes con los que hemos trabajado terminan así de felices. 👇</p>
+      <a href="#gallery" class="btn-copper">Ver galerías 📸</a>
+    </div>
+  </div>
+
+  <!-- PLANNING -->
+  <section id="planning">
+    <div class="reveal">
+      <h2>Tu recuerdo es único.<br>Su planificación también debe serlo.</h2>
+      <p>El recuerdo de tu boda es la única inversión del evento que <strong>sube</strong> de valor con el tiempo. Por eso es <strong>lo más importante</strong>.</p>
+      <br>
+      <p>En nuestra reunión, quiero entender qué momentos son <strong>únicos</strong> para vos, resolver tus preocupaciones y guiarte para que tengas el recuerdo que soñaste. Es el primer paso de nuestra <strong>garantía de calidad</strong>.</p>
+    </div>
+  </section>
+
+  <!-- VSL VIDEO -->
+  <section id="vsl">
+    <h2 class="reveal">Mirá nuestro trabajo</h2>
+    <div class="vsl-wrapper reveal">
+      <video
+        src="https://www.dropbox.com/scl/fi/h4dnooabf5x3muvmhhrv0/Book-Pre-Boda-Axel-y-Coty.mp4?rlkey=pbb4qxwl23j31blu7u0btq3em&st=vjn059m0&raw=1"
+        poster="https://res.cloudinary.com/dgo3agrzb/image/upload/v1777600496/Pixels_Fotograf%C3%ADa_y_Video-180_vfamqy.jpg"
+        controls preload="metadata"
+      ></video>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-bg"></div>
+    <div class="contact-box reveal">
+      <h3>La fiesta termina.<br>Tu recuerdo comienza aquí.</h3>
+      <p>Enviame tu mensaje y me pondré en contacto en 48 horas hábiles, o escribime directo: <a href="https://wa.me/TUNUMERO" target="_blank">📱 WhatsApp</a></p>
+      <div class="form-row">
+        <div class="form-group"><label>Nombre</label><input type="text" placeholder="María"></div>
+        <div class="form-group"><label>Apellido</label><input type="text" placeholder="García"></div>
+      </div>
+      <div class="form-group"><label>Número *</label><input type="tel" placeholder="+54 9 ..."></div>
+      <div class="form-group">
+        <label>Cuéntame sobre tu gran día</label>
+        <textarea placeholder="Fecha del evento, tipo de celebración, tus expectativas..."></textarea>
+      </div>
+      <button class="btn-submit">Enviar mensaje</button>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section id="packages">
+    <div class="section-head reveal">
+      <h2>¿Querés ver más?</h2>
+      <p>Explorá nuestras opciones</p>
+    </div>
+    <div class="packages-grid">
+      <div class="package-card reveal">
+        <img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1777599348/Boda_4_t0zqqm.jpg" alt="Bodas">
+        <div class="package-info">
+          <h3>Paquetes para Bodas</h3>
+          <p>El recuerdo de su "sí, quiero", capturado para siempre. Cobertura profesional diseñada para su total tranquilidad.</p>
+          <a href="#contact">Ver más detalles</a>
+        </div>
+      </div>
+      <div class="package-card reveal">
+        <img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1764638232/pixels_Fotografia_y_Video-6_d3uijd.jpg" alt="Quinceaños">
+        <div class="package-info">
+          <h3>Paquetes para Quinceaños</h3>
+          <p>Tu noche soñada merece un recuerdo para toda la vida. Sesiones pre-xv y cobertura completa de tu fiesta.</p>
+          <a href="#contact">Ver más detalles</a>
+        </div>
+      </div>
+      <div class="package-card reveal">
+        <img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1777600503/pixels_Fotografia_y_Video-192_tt7e8n.jpg" alt="Sesiones">
+        <div class="package-info">
+          <h3>Paquete para Sesiones</h3>
+          <p>¿No tenés una gran fiesta? Tu día es igual de especial. Creamos recuerdos con una sesión única y personalizada.</p>
+          <a href="#contact">Ver más detalles</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <h2 class="reveal">Galería</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal"><img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1777600544/Boda_7_psxy3i.jpg" alt="" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1777600540/Boda_8_scgmfb.jpg" alt="" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1777600530/Pixels_Fotograf%C3%ADa_y_Video-187_zc341g.jpg" alt="" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1777600526/Pixels_Fotograf%C3%ADa_y_Video-586_npqzgj.jpg" alt="" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1777600517/Boda_6_lnzxse.jpg" alt="" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1777600503/pixels_Fotografia_y_Video-192_tt7e8n.jpg" alt="" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1777599348/Boda_4_t0zqqm.jpg" alt="" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1769654997/Pixels_Fotograf%C3%ADa_y_Video-19_apdzeo.jpg" alt="" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1769654994/Pixels_Fotograf%C3%ADa_y_Video-7_zuyliu.jpg" alt="" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1769654994/Pixels_Fotograf%C3%ADa_y_Video-8_t7kcqj.jpg" alt="" loading="lazy"></div>
+    </div>
+  </section>
+
+  <!-- CAL.COM REUNIÓN -->
+  <section id="reunion" style="padding:80px 5%;background:var(--white)">
+    <div style="text-align:center;margin-bottom:40px">
+      <h2 style="font-family:var(--fd);font-size:clamp(1.6rem,3.5vw,2.8rem);font-weight:400;color:var(--brown)">Agendá tu reunión</h2>
+      <p style="color:#5a4535;margin-top:10px;font-size:.95rem">Elegí el día y horario que mejor te quede</p>
+    </div>
+    <!-- Cal inline embed code begins -->
+    <div style="width:100%;height:100%;overflow:scroll" id="my-cal-inline-reunionesdeeventos"></div>
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+      Cal("init", "reunionesdeeventos", {origin:"https://app.cal.com"});
+      Cal.ns.reunionesdeeventos("inline", {
+        elementOrSelector:"#my-cal-inline-reunionesdeeventos",
+        config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true"},
+        calLink: "pixels-fotografia-y-video/reunionesdeeventos",
+      });
+      Cal.ns.reunionesdeeventos("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    </script>
+    <!-- Cal inline embed code ends -->
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">
+      <img src="https://res.cloudinary.com/dgo3agrzb/image/upload/v1777600480/letras_vljkqr.png" alt="Pixels Fotografía y Video">
+      <p>Fotografía y video profesional<br>para los momentos que duran toda la vida.<br><br>Marcos Reyes</p>
+    </div>
+    <div class="footer-col">
+      <h4>WhatsApp</h4>
+      <a href="https://wa.me/543517364379" target="_blank">351 736-4379</a>
+    </div>
+    <div class="footer-col">
+      <h4>Dirección</h4>
+      <p>Córdoba — Argentina</p>
+    </div>
+  </footer>
+  <div class="footer-bottom">© 2025 Pixels Fotografía y Video · Marcos Reyes · Todos los derechos reservados</div>
+
+  <!-- Lightbox -->
+  <div id="lightbox">
+    <span id="lb-close" onclick="document.getElementById('lightbox').classList.remove('open')">✕</span>
+    <img id="lb-img" src="" alt="">
+  </div>
+
+  <script>
+    window.addEventListener('scroll',()=>{
+      document.getElementById('mainNav').style.background=
+        window.scrollY>60?'rgba(26,21,15,0.99)':'rgba(26,21,15,0.93)';
+    });
+    document.querySelectorAll('#navLinks a').forEach(l=>
+      l.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'))
+    );
+    document.querySelectorAll('.gallery-item img').forEach(img=>{
+      img.addEventListener('click',()=>{
+        document.getElementById('lb-img').src=img.src;
+        document.getElementById('lightbox').classList.add('open');
+      });
+    });
+    document.getElementById('lightbox').addEventListener('click',function(e){
+      if(e.target===this)this.classList.remove('open');
+    });
+    const obs=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+    },{threshold:0.1});
+    document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  </script>
+</body>
+</html>
